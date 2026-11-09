@@ -20,6 +20,7 @@ export const lessons: Lesson[] = [
     id: 'fretboard-notes', chapter: 1, title: 'Memorizing the Notes on the Guitar Neck', shortTitle: 'Fretboard notes', readTime: '7 min read',
     summary: 'Turn the fretboard from a grid of anonymous frets into a map you can navigate deliberately.',
     outcome: 'Find natural notes on the sixth and fifth strings without counting from an open string.',
+    screenshot: '/lesson-pages/chapter-01.png',
     sections: [
       { title: 'Start with the musical alphabet', paragraphs: [
         'Music uses seven natural note names: A, B, C, D, E, F, and G. The sequence repeats in both directions. Most neighboring natural notes are two frets apart; B to C and E to F are the exceptions and sit one fret apart. Every fret raises a note by one semitone.',
@@ -50,6 +51,7 @@ export const lessons: Lesson[] = [
     id: 'open-chords', chapter: 2, title: 'Knowing the Basic Open Chords', shortTitle: 'Open chords', readTime: '8 min read',
     summary: 'Build clear, relaxed chord shapes and connect them without losing the beat.',
     outcome: 'Play and switch between C, A, G, E, D, Am, Em, and Dm with clean notes.',
+    screenshot: '/lesson-pages/chapter-02.png',
     sections: [
       { title: 'Why open chords come first', paragraphs: [
         'An open chord combines fretted notes with one or more open strings. Those ringing strings give the guitar a full sound without requiring the fretting hand to hold every note. The guide introduces five major shapes - C, A, G, E, and D - plus A minor, E minor, and D minor.',
@@ -74,6 +76,7 @@ export const lessons: Lesson[] = [
     id: 'power-chords', chapter: 3, title: 'Reviewing and Understanding Power Chords', shortTitle: 'Power chords', readTime: '7 min read',
     summary: 'Use movable two-note shapes to play tight rock rhythm anywhere on the neck.',
     outcome: 'Move E-, A-, and D-string-root power chords while muting every unused string.',
+    screenshot: '/lesson-pages/chapter-03.png',
     sections: [
       { title: 'A big sound made from two notes', paragraphs: [
         'A power chord contains a root and its perfect fifth, often with the root doubled an octave higher. Because it leaves out the third - the note that normally defines major or minor - the shape sounds neutral, direct, and especially clear with distortion.',
@@ -98,6 +101,7 @@ export const lessons: Lesson[] = [
     id: 'barre-chords', chapter: 4, title: 'Reviewing and Understanding Barre Chords', shortTitle: 'Barre chords', readTime: '8 min read',
     summary: 'Turn familiar open-chord shapes into movable major and minor chords.',
     outcome: 'Form E-shape and A-shape barre chords and move them by reading the root note.',
+    screenshot: '/lesson-pages/chapter-04.png',
     sections: [
       { title: 'Your index finger becomes the nut', paragraphs: [
         'A barre chord uses one finger - usually the index - to hold several strings at the same fret. The remaining fingers create a familiar E- or A-family shape in front of that movable nut. This is why one fingering can produce every major or minor chord of the same shape family.',
@@ -122,6 +126,7 @@ export const lessons: Lesson[] = [
     id: 'triads', chapter: 5, title: 'Exploring Essential Major and Minor Triads', shortTitle: 'Major & minor triads', readTime: '8 min read',
     summary: 'See chords as three related notes and unlock compact shapes across the fretboard.',
     outcome: 'Build major and minor triads and play three compact inversions on the top strings.',
+    screenshot: '/lesson-pages/chapter-05.png',
     sections: [
       { title: 'The three notes inside the chord', paragraphs: [
         'A triad contains a root, a third, and a fifth. A major triad uses a major third above the root; a minor triad lowers that third by one semitone. The root and fifth stay the same. That one-note difference creates the bright major and darker minor character.',
