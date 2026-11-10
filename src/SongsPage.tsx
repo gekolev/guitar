@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const sourceUrl = 'https://tabs.ultimate-guitar.com/tab/nickelback/how-you-remind-me-chords-1830045'
 const dropDTutorialUrl = 'https://csgacademyplus.com/lessons/how-you-remind-me-by-nickelback/'
 const dropDTabUrl = 'https://www.gotabs.com/nickelback/how-you-remind-me-tab'
@@ -44,9 +46,9 @@ function ChordDiagram({ chord }: { chord: Chord }) {
   </article>
 }
 
-export default function SongsPage() {
+function HowYouRemindMe({ onSelect }: { onSelect: (song: 'how-you-remind-me' | 'leave-her-johnny') => void }) {
   return <main className="page-layout song-page-layout">
-    <aside className="chapter-sidebar song-library"><p className="eyebrow">Songs</p><nav aria-label="Song tutorials"><button type="button" className="chapter-link active"><span>01</span><span>How You Remind Me</span></button></nav></aside>
+    <aside className="chapter-sidebar song-library"><p className="eyebrow">Songs</p><nav aria-label="Song tutorials"><button type="button" className="chapter-link active" onClick={() => onSelect('how-you-remind-me')}><span>01</span><span>How You Remind Me</span></button><button type="button" className="chapter-link" onClick={() => onSelect('leave-her-johnny')}><span>02</span><span>Official Leave Her Johnny</span></button></nav></aside>
     <article className="article song-tutorial">
       <header className="article-header song-hero">
         <div className="article-meta"><p className="eyebrow">Song tutorial 01</p><span>Intermediate · 20 min</span></div>
@@ -65,4 +67,60 @@ export default function SongsPage() {
     </article>
     <aside className="article-outline"><p className="eyebrow">On this page</p><ol><li>Chord shapes</li><li>Rhythm approach</li><li>Drop D version</li><li>Song breakdown</li><li>Practice plan</li></ol></aside>
   </main>
+}
+
+const leaveHerJohnnySources = {
+  songsterr: 'https://www.songsterr.com/a/wsa/sean-dagher-leave-her-johnny-vocal-tab-s4272640',
+  guitarTuna: 'https://guitartuna.com/chords/leave-her-johnny-traditional-easy-guitar-chords-61c1f1a82656a3cdf92d9db2',
+  museScore: 'https://musescore.com/user/36515706/scores/6987473?srsltid=AYCX9vLG0J1phWJVe9SsAPFi_UF2gUs4u5EEId9rCAlrJ8DnNZSLvZo_',
+}
+
+const leaveHerJohnnyChords: Chord[] = [
+  { name: 'E♭', frets: ['x', 6, 5, 3, 4, 3], fingers: 'x 4 3 1 2 1' },
+  { name: 'B♭', frets: ['x', 1, 3, 3, 3, 1], fingers: 'x 1 2 3 4 1' },
+  { name: 'A♭', frets: [4, 6, 6, 5, 4, 4], fingers: '1 3 4 2 1 1' },
+  { name: 'E♭/B♭', frets: ['x', 1, 5, 3, 4, 3], fingers: 'x 1 4 2 3 2' },
+  { name: 'B♭7', frets: ['x', 1, 3, 1, 3, 1], fingers: 'x 1 3 1 4 1' },
+]
+
+const leaveHerJohnnyBeginnerChords: Chord[] = [
+  { name: 'C', frets: ['x', 3, 2, 0, 1, 0], fingers: 'x 3 2 0 1 0' },
+  { name: 'G', frets: [3, 2, 0, 0, 0, 3], fingers: '2 1 0 0 0 3' },
+  { name: 'F', frets: ['x', 'x', 3, 2, 1, 1], fingers: 'x x 3 2 1 1' },
+]
+
+const leaveHerJohnnySections = [
+  { name: 'Verse', repeats: 'Lead vocal, one line at a time', note: 'Keep the first phrase sparse and leave room after each sung line. Resolve clearly to E♭ before the response enters.' },
+  { name: 'Response', repeats: 'Answer each lead phrase', note: 'Bring the strum in a little more strongly under the repeated title. The call-and-response shape matters more than filling every beat.' },
+  { name: 'Chorus', repeats: 'Full group sound', note: 'Use the same harmonic vocabulary with a broader attack. Let A♭ provide the lift, then make the B♭ or B♭7 turnaround point decisively home.' },
+  { name: 'Next verse', repeats: 'Repeat for each lyric stanza', note: 'Reset the dynamics for every new lead line, then rebuild through the response. This repeated contrast keeps the long strophic form moving.' },
+  { name: 'Final refrain', repeats: 'Slow and settle on E♭', note: 'Widen the last phrase slightly without losing the pulse. Finish together on a clean E♭ and mute the strings deliberately.' },
+]
+
+function LeaveHerJohnny({ onSelect }: { onSelect: (song: 'how-you-remind-me' | 'leave-her-johnny') => void }) {
+  return <main className="page-layout song-page-layout">
+    <aside className="chapter-sidebar song-library"><p className="eyebrow">Songs</p><nav aria-label="Song tutorials"><button type="button" className="chapter-link" onClick={() => onSelect('how-you-remind-me')}><span>01</span><span>How You Remind Me</span></button><button type="button" className="chapter-link active" onClick={() => onSelect('leave-her-johnny')}><span>02</span><span>Official Leave Her Johnny</span></button></nav></aside>
+    <article className="article song-tutorial">
+      <header className="article-header song-hero">
+        <div className="article-meta"><p className="eyebrow">Song tutorial 02</p><span>Beginner · 15 min</span></div>
+        <h1>Official Leave Her Johnny</h1><p className="song-byline">Traditional sea shanty · Seán Dagher arrangement reference</p>
+        <p className="dek">Learn the official chord set in E♭ major and use a restrained call-and-response strum that leaves room for the lead and group vocals.</p>
+        <div className="song-facts"><div><span>Key</span><strong>E♭ major</strong></div><div><span>Tuning</span><strong>Standard · no capo</strong></div><div><span>Tempo</span><strong>60 BPM</strong></div><div><span>Official chords</span><strong>E♭ · B♭ · A♭ · E♭/B♭ · B♭7</strong></div></div>
+      </header>
+      <div className="article-body">
+        <section id="chords"><p className="eyebrow">Chord toolkit</p><h2>Five voicings for the official version</h2><p>The official GuitarTuna chart uses E♭, B♭, A♭, E♭/B♭, and B♭7 in standard tuning without a capo. These movable shapes preserve that key; an × means mute the string and ○ means play it open.</p><div className="chord-grid">{leaveHerJohnnyChords.map((chord) => <ChordDiagram chord={chord} key={chord.name} />)}</div><div className="technique-note"><strong>Official-version shortcut</strong><p>First practice only E♭, B♭, and A♭. Add E♭/B♭ for a steadier bass line and B♭7 when the three main changes are comfortable.</p></div></section>
+        <section id="beginner-chords"><p className="eyebrow">Beginner version</p><h2>Use three easier shapes with capo 3</h2><p>Place a capo at fret 3 and play C, G, and the small four-string F shape below. They sound as E♭, B♭, and A♭, so you stay in the official key while avoiding the full barre chords. Treat the capo as the nut and count every fret from it.</p><div className="chord-grid">{leaveHerJohnnyBeginnerChords.map((chord) => <ChordDiagram chord={chord} key={chord.name} />)}</div><div className="technique-note"><strong>Simplified progression</strong><p>Whenever the official chart shows E♭, play C; for B♭ or B♭7, play G; and for A♭, play F. Use C in place of E♭/B♭ until you are ready to add bass-note inversions.</p></div></section>
+        <section id="rhythm"><p className="eyebrow">Rhythm</p><h2>Make space for the response</h2><div className="strum-card"><span>Count</span><strong>1 &amp; 2 &amp; 3 &amp; 4 &amp;</strong><span>Pattern</span><strong>↓ · ↓↑ · ↑↓↑</strong></div><p>Begin with one soft downstroke on each change at 60 BPM. Add the eighth-note pattern only after the chord changes feel secure, keeping the lead lines lighter and the communal responses broader.</p></section>
+        <section id="breakdown"><p className="eyebrow">Arrangement map</p><h2>Song breakdown</h2><div className="song-breakdown">{leaveHerJohnnySections.map((section, index) => <article key={section.name} className="breakdown-row"><div className="breakdown-title"><span>{String(index + 1).padStart(2, '0')}</span><h3>{section.name}</h3><p>{section.repeats}</p></div><div><div className="progression" aria-label={`${section.name} chord progression`}>{['E♭', 'B♭', 'A♭', 'E♭'].map((chord) => <strong key={chord}>{chord}</strong>)}</div><p>{section.note}</p></div></article>)}</div></section>
+        <section className="practice-section" id="practice"><p className="eyebrow">Practice plan</p><h2>Learn it in four passes</h2><ol><li>Loop E♭–B♭–A♭–E♭ slowly with one downstroke per chord.</li><li>Add the E♭/B♭ inversion and B♭7 turnaround from the official chart.</li><li>Alternate quiet lead phrases with stronger response phrases at 60 BPM.</li><li>Follow the vocal part in the Songsterr reference, then play the complete form from the score.</li></ol></section>
+        <section className="sources-section"><h2>Tutorials and references</h2><p>Use the chord chart for the official harmony, the vocal tab for phrasing, and the score for the complete notated arrangement.</p><ul><li><a href={leaveHerJohnnySources.guitarTuna} target="_blank" rel="noreferrer">GuitarTuna: official and simplified chord charts <span aria-hidden="true">↗</span></a></li><li><a href={leaveHerJohnnySources.songsterr} target="_blank" rel="noreferrer">Songsterr: Seán Dagher vocal tab <span aria-hidden="true">↗</span></a></li><li><a href={leaveHerJohnnySources.museScore} target="_blank" rel="noreferrer">MuseScore: sheet music <span aria-hidden="true">↗</span></a></li></ul></section>
+      </div>
+    </article>
+    <aside className="article-outline"><p className="eyebrow">On this page</p><ol><li>Official chord shapes</li><li>Beginner chord shapes</li><li>Rhythm approach</li><li>Song breakdown</li><li>Practice plan</li></ol></aside>
+  </main>
+}
+
+export default function SongsPage() {
+  const [selectedSong, setSelectedSong] = useState<'how-you-remind-me' | 'leave-her-johnny'>('how-you-remind-me')
+  return selectedSong === 'leave-her-johnny' ? <LeaveHerJohnny onSelect={setSelectedSong} /> : <HowYouRemindMe onSelect={setSelectedSong} />
 }
